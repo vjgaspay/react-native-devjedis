@@ -30,5 +30,11 @@ export const styles = StyleSheet.create({
         color: 'white',
         fontSize: 16,
         fontWeight: 'bold'
+    },
+    person: {
+        marginTop: 25,
+        padding: 30,
+        backgroundColor: 'lightblue',
+        fontSize: 24
     }
 });
