@@ -1,10 +1,11 @@
 import { Text, View, StyleSheet } from "react-native";
-import SafeAreaViewComponent from "./SafeAreaViewComponent";
+import SafeAreaViewComponent from "./src/components/SafeAreaViewComponent";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context"; 
-import ColorThemes from "./ColorThemes";
-import BackgroundImage from "./BackgroundImage";
-import PlatformSpecificCode from "./PlatformSpecificCode";
+import ColorThemes from "./src/components/ColorThemes";
+import BackgroundImage from "./src/components/BackgroundImage";
+import PlatformSpecificCode from "./src/components/PlatformSpecificCode";
+import Flexbox from "./src/components/Flexbox";
 
 const App = () => {
     return (
@@ -12,8 +13,9 @@ const App = () => {
             {/* <SafeAreaViewComponent /> */}
             {/* <ColorThemes /> */}
             {/* <BackgroundImage /> */}
+            {/* <PlatformSpecificCode /> */}
 
-            <PlatformSpecificCode />
+            <Flexbox />
 
             <StatusBar />
         </SafeAreaProvider>

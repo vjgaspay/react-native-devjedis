@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, ImageBackground } from "react-native";
 
-const image = require("./assets/images/background-image.png");
+const image = require("../../assets/images/background-image.png");
 
 const BackgroundImage = () => {
     return (
