@@ -12,6 +12,21 @@ const styles = StyleSheet.create({});
 
 export default Name;
 
+
+--------------
+
+Lesson 6:
+
+npx expo install @react-navigation/drawer
+npx expo install react-native-gesture-handler
+npx expo install react-native-reanimated
+or
+npx expo install @react-navigation/drawer react-native-gesture-handler react-native-reanimated
+
+
+start the development server and clear the babel cache: npx expo start --clear
+
+
 --------------
 
 Lesson 5:
@@ -26,6 +41,7 @@ npx expo install react-native-gesture-handler
 or
 npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar react-native-gesture-handler
 
+
 --------------
 
 Lesson 3:
@@ -37,3 +53,10 @@ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 npx expo install --fix
 
 npx expo install react-native-safe-area-context
+
+
+--------------
+
+Lesson 2:
+
+https://icons.expo.fyi
