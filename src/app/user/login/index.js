@@ -5,7 +5,9 @@ const Login = () => {
     return (
         <View>
             <Text>Login Screen</Text>
-            <Link href="/" style={{marginTop: 15, color: 'blue'}}>Home</Link>
+            <Link href="/user/login/forgot-password" style={{marginTop: 15, color: 'blue'}}>Forgot Password</Link>
+
+            <Link href="/user/login/modal" style={{marginTop: 15, color: 'blue'}}>Show Modal</Link>
         </View>
     );
 }

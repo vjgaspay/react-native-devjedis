@@ -9,7 +9,7 @@ const Home = () => { //route: /
             <Text>Home Screen</Text>
             <Link href="/settings" style={{marginTop: 15, color: 'blue'}}>Settings</Link>
             <Link href="/faq" style={{marginTop: 15, color: 'blue'}}>FAQ</Link>
-            <Link href="/login" style={{marginTop: 15, color: 'blue'}}>Login</Link>
+            <Link href="/user/login" style={{marginTop: 15, color: 'blue'}}>Login</Link>
 
             <Link href="/blog/12345" style={{marginTop: 15, color: 'blue'}}>Blog - 12345</Link>
             <Link href={{

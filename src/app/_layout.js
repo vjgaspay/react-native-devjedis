@@ -1,12 +1,14 @@
-import { Text, View, StyleSheet, SafeAreaView } from "react-native";
-import { Slot, Stack, Tabs } from "expo-router";
+import { Text, View, StyleSheet, SafeAreaView, Pressable } from "react-native";
+import { Slot, Stack, Tabs, usePathname } from "expo-router";
 import { Drawer } from "expo-router/drawer";
-import { FontAwesome5, Ionicons, MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
+import { FontAwesome5, Ionicons, MaterialCommunityIcons, AntDesign, Entypo } from '@expo/vector-icons';
 
 const Layout = () => {
+    const pathname = usePathname();
+
     return (
         <Drawer
-            screenOptions={{
+            screenOptions={ ({ navigation }) => ({
                 headerShown: true,
                 title: "Trivut App",
                 headerTitleAlign: "center",
@@ -25,8 +27,16 @@ const Layout = () => {
                     position: 'absolute',
                     bottom: 20
                 },
-                swipeEnabled: true
-            }}
+                swipeEnabled: true,
+                drawerPosition: 'left',
+                drawerActiveTintColor: 'red',
+                drawerInactiveTintColor: 'gray',
+                headerLeft: () => (
+                    <Pressable style={{ marginLeft: 10 }} onPress={ navigation.toggleDrawer }>
+                        <Entypo name="menu" size={40} color="white" />
+                    </Pressable>
+                )
+            })}
         >
             <Drawer.Screen name="index"
                 options={{ 
@@ -53,11 +63,13 @@ const Layout = () => {
                     drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="frequently-asked-questions" size={size} color={color} />
                 }}
             />
-            <Drawer.Screen name="login/index"
+            <Drawer.Screen name="user"
                 options={{ 
-                    title: "Login", 
-                    drawerLabel: "Sign in",
-                    drawerIcon: ({ color, size }) => <AntDesign name="login" size={size} color={color} />
+                    title: (pathname) === '/user/login' ? 'Login'
+                        : (pathname) === '/user/login/forgot-password' ? 'Forgot Password'
+                        : 'Register', 
+                    drawerLabel: "User",
+                    drawerIcon: ({ color, size }) => <AntDesign name="user" size={size} color={color} />
                 }} 
             />
             <Drawer.Screen name="blog/[slug]"
