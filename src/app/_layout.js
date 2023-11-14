@@ -67,7 +67,7 @@ const Layout = () => {
                 options={{ 
                     title: (pathname) === '/user/login' ? 'Login'
                         : (pathname) === '/user/login/forgot-password' ? 'Forgot Password'
-                        : 'Register', 
+                        : 'Register new account', 
                     drawerLabel: "User",
                     drawerIcon: ({ color, size }) => <AntDesign name="user" size={size} color={color} />
                 }} 

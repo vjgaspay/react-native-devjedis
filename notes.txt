@@ -15,6 +15,13 @@ export default Name;
 
 --------------
 
+Lesson 9:
+
+npx expo install validator
+
+
+--------------
+
 Lesson 6:
 
 npx expo install @react-navigation/drawer
