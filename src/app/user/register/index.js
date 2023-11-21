@@ -95,6 +95,10 @@ const Register = () => {
                 ) )
             }
 
+            { successMessage &&
+                <Text style={styles.successMessage}>{ successMessage }</Text>
+            }
+
             <TextInput style={styles.input} placeholder="First Name" value={firstName} onChangeText={setFirstName} />
             <TextInput style={styles.input} placeholder="Last Name" value={lastName} onChangeText={setLastName} />
             <TextInput style={styles.input} inputMode="email" placeholder="Username/Email" value={username} onChangeText={setUsername} /> 
@@ -135,6 +139,11 @@ const styles = StyleSheet.create({
     },
     error: {
         color: 'red',
+        margin: 12,
+        fontWeight: 'bold'
+    },
+    successMessage: {
+        color: 'blue',
         margin: 12,
         fontWeight: 'bold'
     }

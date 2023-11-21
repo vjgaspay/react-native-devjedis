@@ -15,6 +15,14 @@ export default Name;
 
 --------------
 
+Lesson 10:
+
+npx expo install react-native-paper
+(if necessary) npx expo install react-native-safe-area-context
+
+
+--------------
+
 Lesson 9:
 
 npx expo install validator
