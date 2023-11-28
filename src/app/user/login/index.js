@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Text, View, StyleSheet, TextInput, Pressable } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { Link } from "expo-router";
+import { Button, TextInput } from "react-native-paper";
 
 const Login = () => {
     const [ username, setUsername ] = useState("");
@@ -8,6 +9,7 @@ const Login = () => {
     const [ csrfToken, setCsrfToken ] = useState("");
     const [ error, setError ] = useState("");
     const [ isPending, setIsPending ] = useState("");
+    const [ secureTextEntry, setSecureTextEntry ] = useState(true);
 
     const endpoint = process.env.EXPO_PUBLIC_API_BASE_URL + "/api/signin";
 
@@ -65,12 +67,28 @@ const Login = () => {
                 <Text style={styles.error}>{error}</Text>
             }
 
-            <TextInput style={styles.input} inputMode="email" placeholder="Username/Email" value={username} onChangeText={setUsername} /> 
-            <TextInput style={styles.input} secureTextEntry placeholder="Password" value={password} onChangeText={setPassword} />
+            <TextInput 
+                mode="outlined" 
+                label="Username/Email" 
+                style={styles.input} 
+                inputMode="email" 
+                //placeholder="Username/Email"
+                value={username} 
+                onChangeText={setUsername} 
+            /> 
 
-            <Pressable style={styles.button} onPress={handlePress}>
-                <Text style={styles.buttonText}>Sign in</Text>
-            </Pressable>
+            <TextInput 
+                mode="outlined" 
+                label="Password" 
+                style={styles.input} 
+                secureTextEntry={secureTextEntry}
+                //placeholder="Password" 
+                value={password} 
+                onChangeText={setPassword} 
+                right={<TextInput.Icon icon={ secureTextEntry ? "eye" : "eye-off" } onPress={ () => setSecureTextEntry( (preVal) => !preVal ) } />}
+            />
+
+            <Button mode="elevated" icon="login" style={styles.button} onPress={handlePress}>Sign in</Button>
 
             <Text>{csrfToken}</Text>
         </View>
@@ -79,26 +97,12 @@ const Login = () => {
 
 const styles = StyleSheet.create({
     input: {
-        height: 40,
-        marginHorizontal: 12,
-        marginVertical: 6,
-        borderWidth: 1,
-        borderColor: '#ced4da',
-        borderRadius: 10,
-        padding: 10
-    },
-    button: {
-        alignItems: 'center',
-        paddingVertical: 12,
-        borderRadius: 10,
-        backgroundColor: '#0d6efd',
         marginHorizontal: 12,
         marginTop: 12
     },
-    buttonText: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: 'white'
+    button: {
+        marginHorizontal: 12,
+        marginTop: 12
     },
     error: {
         color: 'red',

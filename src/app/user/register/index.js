@@ -1,6 +1,7 @@
-import { Text, View, StyleSheet, TextInput, Pressable } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { useState, useEffect } from "react";
 import { isEmail, isStrongPassword } from "validator";
+import { Button, TextInput } from "react-native-paper";
 
 const Register = () => {
     const [ firstName, setFirstName ] = useState("");
@@ -8,6 +9,9 @@ const Register = () => {
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ password2, setPassword2 ] = useState("");
+
+    const [ secureTextEntry1, setSecureTextEntry1 ] = useState(true);
+    const [ secureTextEntry2, setSecureTextEntry2 ] = useState(true);
 
     const handlePress = () => {
         const error_messages = [];
@@ -99,15 +103,48 @@ const Register = () => {
                 <Text style={styles.successMessage}>{ successMessage }</Text>
             }
 
-            <TextInput style={styles.input} placeholder="First Name" value={firstName} onChangeText={setFirstName} />
-            <TextInput style={styles.input} placeholder="Last Name" value={lastName} onChangeText={setLastName} />
-            <TextInput style={styles.input} inputMode="email" placeholder="Username/Email" value={username} onChangeText={setUsername} /> 
-            <TextInput style={styles.input} secureTextEntry placeholder="Password" value={password} onChangeText={setPassword} />
-            <TextInput style={styles.input} secureTextEntry placeholder="Password2" value={password2} onChangeText={setPassword2} />
-
-            <Pressable style={styles.button} onPress={handlePress}>
-                <Text style={styles.buttonText}>Register</Text>
-            </Pressable>
+            <TextInput 
+                mode="outlined" 
+                label="First Name" 
+                style={styles.input} 
+                value={firstName} 
+                onChangeText={setFirstName} 
+            /> 
+            <TextInput 
+                mode="outlined" 
+                label="Last Name" 
+                style={styles.input} 
+                value={lastName} 
+                onChangeText={setLastName} 
+            /> 
+            <TextInput 
+                mode="outlined" 
+                label="Username/Email" 
+                style={styles.input} 
+                inputMode="email" 
+                value={username} 
+                onChangeText={setUsername} 
+            />
+            <TextInput 
+                mode="outlined" 
+                label="Password" 
+                style={styles.input} 
+                secureTextEntry={secureTextEntry1}
+                value={password} 
+                onChangeText={setPassword} 
+                right={<TextInput.Icon icon={ secureTextEntry1 ? "eye" : "eye-off" } onPress={ () => setSecureTextEntry1( (preVal) => !preVal ) } />}
+            />
+            <TextInput 
+                mode="outlined" 
+                label="Password 2" 
+                style={styles.input} 
+                secureTextEntry={secureTextEntry2}
+                value={password2} 
+                onChangeText={setPassword2} 
+                right={<TextInput.Icon icon={ secureTextEntry2 ? "eye" : "eye-off" } onPress={ () => setSecureTextEntry2( (preVal) => !preVal ) } />}
+            />
+            
+            <Button mode="elevated" icon="login" style={styles.button} onPress={handlePress}>Register</Button>
 
             <Text>{ csrfToken }</Text>
         </View>
@@ -116,26 +153,12 @@ const Register = () => {
 
 const styles = StyleSheet.create({
     input: {
-        height: 40,
-        marginHorizontal: 12,
-        marginVertical: 6,
-        borderWidth: 1,
-        borderColor: '#ced4da',
-        borderRadius: 10,
-        padding: 10
-    },
-    button: {
-        alignItems: 'center',
-        paddingVertical: 12,
-        borderRadius: 10,
-        backgroundColor: '#0d6efd',
         marginHorizontal: 12,
         marginTop: 12
     },
-    buttonText: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: 'white'
+    button: {
+        marginHorizontal: 12,
+        marginTop: 12
     },
     error: {
         color: 'red',

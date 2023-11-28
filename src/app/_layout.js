@@ -82,6 +82,8 @@ const Layout = () => {
                 />
                 <Drawer.Screen name="rn-paper"
                     options={{
+                        // --> /rn-paper
+                        headerShown: !(pathname.charAt(9) === "/"),
                         title: "React Native Paper",
                         drawerIcon: ({ color, size }) => <FontAwesome5 name="newspaper" size={size} color={color} />
                     }}
