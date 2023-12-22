@@ -10,10 +10,11 @@ const RNPaperIndex = () => {
             <LinkWithDivider title="Banner" resourcePath="Banner" />
             <LinkWithDivider title="Button" resourcePath="Button" />
             <LinkWithDivider title="Card" resourcePath="Card" />
+			<LinkWithDivider title="Checkbox" resourcePath="Checkbox" />
             <LinkWithDivider title="Helper Text" resourcePath="HelperText" />
             <LinkWithDivider title="Icon & Icon Button" resourcePath="IconAndIconButton" />
             <LinkWithDivider title="Text Input" resourcePath="TextInput" />
-        </ScrollView>
+		</ScrollView>
     );
 }
 
