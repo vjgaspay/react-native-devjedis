@@ -12,6 +12,8 @@ const RNPaperIndex = () => {
             <LinkWithDivider title="Card" resourcePath="Card" />
 			<LinkWithDivider title="Chip" resourcePath="Chip" />
 			<LinkWithDivider title="Checkbox" resourcePath="Checkbox" />
+			<LinkWithDivider title="Data Table" resourcePath="DataTable" />
+			<LinkWithDivider title="Dialog and Portal" resourcePath="DialogAndPortal" />
             <LinkWithDivider title="Helper Text" resourcePath="HelperText" />
             <LinkWithDivider title="Icon & Icon Button" resourcePath="IconAndIconButton" />
 			<LinkWithDivider title="Radio Button" resourcePath="RadioButton" />
