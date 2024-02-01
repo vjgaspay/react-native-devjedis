@@ -18,6 +18,9 @@ const RNPaperIndex = () => {
             <LinkWithDivider title="Helper Text" resourcePath="HelperText" />
             <LinkWithDivider title="Icon & Icon Button" resourcePath="IconAndIconButton" />
 			<LinkWithDivider title="List Accordion" resourcePath="ListAccordion" />
+			<LinkWithDivider title="Menu" resourcePath="Menu" />
+			<LinkWithDivider title="Modal" resourcePath="Modal" />
+			<LinkWithDivider title="Progress Bar" resourcePath="ProgressBar" />
 			<LinkWithDivider title="Radio Button" resourcePath="RadioButton" />
 			<LinkWithDivider title="Switch" resourcePath="Switch" />
             <LinkWithDivider title="Text Input" resourcePath="TextInput" />
